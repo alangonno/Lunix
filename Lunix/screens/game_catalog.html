@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Jogos - Lunix Indie Games</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Descubra jogos indie únicos com nosso sistema avançado de filtros e recomendações personalizadas. Explore por gênero, humor e estilo." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flunixindi5492back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-soft sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                            <circle cx="16" cy="16" r="4" fill="currentColor"/>
+                        </svg>
+                        <span class="text-xl font-bold text-primary">Lunix</span>
+                    </a>
+                </div>
+
+                <!-- Main Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">Início</a>
+                    <a href="game_catalog.html" class="text-primary font-semibold">Catálogo</a>
+                    <a href="new_releases.html" class="text-text-secondary hover:text-primary transition-colors">Lançamentos</a>
+                    <a href="developer_publishing.html" class="text-text-secondary hover:text-primary transition-colors">Publicar</a>
+                    <a href="about_us.html" class="text-text-secondary hover:text-primary transition-colors">Sobre</a>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-text-secondary hover:text-primary transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                    <button class="p-2 text-text-secondary hover:text-primary transition-colors relative">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 bg-accent text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">7</span>
+                    </button>
+                    <button class="btn-primary">Entrar</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="p-2 text-text-secondary hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold mb-4">Catálogo de Jogos Indie</h1>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Descubra experiências únicas com nosso sistema inteligente de busca e filtros avançados
+                </p>
+            </div>
+
+            <!-- Smart Search Bar -->
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="Busque por 'jogos relaxantes', 'aventura pixel art', 'narrativa envolvente'..." class="w-full px-6 py-4 pr-12 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-lg" id="smartSearch" />
+                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-text-secondary hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Quick Search Suggestions -->
+                <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                    <button class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm hover:bg-primary hover:text-white transition-colors">
+                        Relaxantes
+                    </button>
+                    <button class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm hover:bg-primary hover:text-white transition-colors">
+                        Desafiadores
+                    </button>
+                    <button class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm hover:bg-primary hover:text-white transition-colors">
+                        História Rica
+                    </button>
+                    <button class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm hover:bg-primary hover:text-white transition-colors">
+                        Pixel Art
+                    </button>
+                    <button class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm hover:bg-primary hover:text-white transition-colors">
+                        Multiplayer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Sidebar Filters -->
+                <aside class="lg:w-80 flex-shrink-0">
+                    <div class="bg-surface rounded-xl shadow-soft p-6 sticky top-24">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-lg font-semibold">Filtros</h2>
+                            <button class="text-primary hover:text-primary-600 text-sm font-medium" id="clearFilters">
+                                <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                </svg>
+                                Limpar
+                            </button>
+                        </div>
+
+                        <!-- Genre Filter -->
+                        <div class="mb-6">
+                            <h3 class="font-semibold mb-3">Gênero</h3>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">Aventura</span>
+                                    <span class="ml-auto text-xs text-text-secondary">(234)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">Puzzle</span>
+                                    <span class="ml-auto text-xs text-text-secondary">(189)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">Plataforma</span>
+                                    <span class="ml-auto text-xs text-text-secondary">(156)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">RPG</span>
+                                    <span class="ml-auto text-xs text-text-secondary">(143)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">Estratégia</span>
+                                    <span class="ml-auto text-xs text-text-secondary">(98)</span>
+                                </label>
+                                <button class="text-primary text-sm hover:text-primary-600">Ver mais gêneros</button>
+                            </div>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="mb-6">
+                            <h3 class="font-semibold mb-3">Preço</h3>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="price" class="text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">Gratuito</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="price" class="text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">Até R$ 20</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="price" class="text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">R$ 20 - R$ 50</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="price" class="text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">Acima de R$ 50</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Mood Tags -->
+                        <div class="mb-6">
+                            <h3 class="font-semibold mb-3">Humor & Estilo</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="px-3 py-1 bg-primary-50 text-primary rounded-full text-xs hover:bg-primary hover:text-white transition-colors">
+                                    Relaxante
+                                </button>
+                                <button class="px-3 py-1 bg-gray-100 text-text-secondary rounded-full text-xs hover:bg-primary hover:text-white transition-colors">
+                                    Desafiador
+                                </button>
+                                <button class="px-3 py-1 bg-gray-100 text-text-secondary rounded-full text-xs hover:bg-primary hover:text-white transition-colors">
+                                    Atmosférico
+                                </button>
+                                <button class="px-3 py-1 bg-gray-100 text-text-secondary rounded-full text-xs hover:bg-primary hover:text-white transition-colors">
+                                    Nostálgico
+                                </button>
+                                <button class="px-3 py-1 bg-gray-100 text-text-secondary rounded-full text-xs hover:bg-primary hover:text-white transition-colors">
+                                    Criativo
+                                </button>
+                                <button class="px-3 py-1 bg-gray-100 text-text-secondary rounded-full text-xs hover:bg-primary hover:text-white transition-colors">
+                                    Épico
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Rating Filter -->
+                        <div class="mb-6">
+                            <h3 class="font-semibold mb-3">Avaliação</h3>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm flex items-center">
+                                        <span class="text-accent mr-1">★★★★★</span>
+                                        (4.5+)
+                                    </span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm flex items-center">
+                                        <span class="text-accent mr-1">★★★★☆</span>
+                                        (4.0+)
+                                    </span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm flex items-center">
+                                        <span class="text-accent mr-1">★★★☆☆</span>
+                                        (3.0+)
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Release Date -->
+                        <div class="mb-6">
+                            <h3 class="font-semibold mb-3">Lançamento</h3>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="release" class="text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">Última semana</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="release" class="text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">Último mês</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="release" class="text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">Últimos 6 meses</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="release" class="text-primary focus:ring-primary" />
+                                    <span class="ml-2 text-sm">Último ano</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Save Search -->
+                        <button class="w-full bg-secondary text-white py-3 rounded-lg font-semibold hover:bg-secondary-600 transition-colors">
+                            <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+                            </svg>
+                            Salvar Busca
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- Main Content Area -->
+                <main class="flex-1">
+                    <!-- Results Header -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-2">2.847 jogos encontrados</h2>
+                            <p class="text-text-secondary">Mostrando resultados para sua busca</p>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                            <!-- View Toggle -->
+                            <div class="flex bg-gray-100 rounded-lg p-1">
+                                <button class="p-2 bg-white rounded shadow-sm text-primary" id="gridView">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                                    </svg>
+                                </button>
+                                <button class="p-2 text-text-secondary hover:text-primary" id="listView">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Sort Dropdown -->
+                            <select class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option>Mais Relevantes</option>
+                                <option>Mais Recentes</option>
+                                <option>Melhor Avaliados</option>
+                                <option>Menor Preço</option>
+                                <option>Maior Preço</option>
+                                <option>Mais Populares</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Active Filters -->
+                    <div class="flex flex-wrap gap-2 mb-6" id="activeFilters">
+                        <span class="inline-flex items-center px-3 py-1 bg-primary-100 text-primary rounded-full text-sm">
+                            Relaxante
+                            <button class="ml-2 hover:text-primary-600">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 bg-secondary-100 text-secondary rounded-full text-sm">
+                            Aventura
+                            <button class="ml-2 hover:text-secondary-600">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </span>
+                    </div>
+
+                    <!-- Games Grid -->
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gamesGrid">
+                        <!-- Game Card 1 -->
+                        <div class="card hover:shadow-floating transition-all group cursor-pointer">
+                            <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
+                                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Mystic Forest Journey" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                                <div class="absolute top-2 right-2">
+                                    <button class="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors">
+                                        <svg class="w-4 h-4 text-text-secondary hover:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="absolute bottom-2 left-2">
+                                    <span class="px-2 py-1 bg-success text-white rounded text-xs font-medium">95%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">Mystic Forest Journey</h3>
+                                <div class="flex items-center text-sm text-accent">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    4.8
+                                </div>
+                            </div>
+                            <p class="text-text-secondary mb-3 text-sm">Uma aventura relaxante através de florestas mágicas com quebra-cabeças contemplativos.</p>
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="px-2 py-1 bg-primary-50 text-primary rounded text-xs">Relaxante</span>
+                                <span class="px-2 py-1 bg-secondary-50 text-secondary rounded text-xs">Aventura</span>
+                                <span class="px-2 py-1 bg-accent-50 text-accent rounded text-xs">Puzzle</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-primary font-bold text-lg">R$ 24,90</span>
+                                <div class="flex space-x-2">
+                                    <button class="p-2 text-text-secondary hover:text-primary transition-colors" title="Comparar">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="bg-primary hover:bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                        Ver Detalhes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Game Card 2 -->
+                        <div class="card hover:shadow-floating transition-all group cursor-pointer">
+                            <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
+                                <img src="https://images.pixabay.com/photo/2017/11/24/10/43/ticket-2974645_1280.jpg" alt="Neon Cyberpunk Racing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                                <div class="absolute top-2 right-2">
+                                    <button class="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors">
+                                        <svg class="w-4 h-4 text-accent" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="absolute bottom-2 left-2">
+                                    <span class="px-2 py-1 bg-success text-white rounded text-xs font-medium">92%</span>
+                                </div>
+                                <div class="absolute top-2 left-2">
+                                    <span class="px-2 py-1 bg-accent text-white rounded text-xs font-medium">NOVO</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">Neon Cyberpunk Racing</h3>
+                                <div class="flex items-center text-sm text-accent">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    4.6
+                                </div>
+                            </div>
+                            <p class="text-text-secondary mb-3 text-sm">Corridas futuristas em ambientes cyberpunk com trilha sonora synthwave.</p>
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="px-2 py-1 bg-primary-50 text-primary rounded text-xs">Desafiador</span>
+                                <span class="px-2 py-1 bg-secondary-50 text-secondary rounded text-xs">Corrida</span>
+                                <span class="px-2 py-1 bg-accent-50 text-accent rounded text-xs">Cyberpunk</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-primary font-bold text-lg">R$ 34,90</span>
+                                <div class="flex space-x-2">
+                                    <button class="p-2 text-text-secondary hover:text-primary transition-colors" title="Comparar">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="bg-primary hover:bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                        Ver Detalhes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Game Card 3 -->
+                        <div class="card hover:shadow-floating transition-all group cursor-pointer">
+                            <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
+                                <img src="https://images.pexels.com/photos/194511/pexels-photo-194511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Pixel Art Platformer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2016/11/29/06/18/home-office-1867761_1280.jpg'; this.onerror=null;" />
+                                <div class="absolute top-2 right-2">
+                                    <button class="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors">
+                                        <svg class="w-4 h-4 text-text-secondary hover:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="absolute bottom-2 left-2">
+                                    <span class="px-2 py-1 bg-success text-white rounded text-xs font-medium">89%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">Pixel Art Platformer</h3>
+                                <div class="flex items-center text-sm text-accent">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    4.4
+                                </div>
+                            </div>
+                            <p class="text-text-secondary mb-3 text-sm">Plataforma retrô com mecânicas modernas e arte pixel perfeita.</p>
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="px-2 py-1 bg-primary-50 text-primary rounded text-xs">Nostálgico</span>
+                                <span class="px-2 py-1 bg-secondary-50 text-secondary rounded text-xs">Plataforma</span>
+                                <span class="px-2 py-1 bg-accent-50 text-accent rounded text-xs">Pixel Art</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-primary font-bold text-lg">R$ 19,90</span>
+                                <div class="flex space-x-2">
+                                    <button class="p-2 text-text-secondary hover:text-primary transition-colors" title="Comparar">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="bg-primary hover:bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                        Ver Detalhes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Game Card 4 -->
+                        <div class="card hover:shadow-floating transition-all group cursor-pointer">
+                            <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
+                                <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Ocean Deep Explorer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg'; this.onerror=null;" />
+                                <div class="absolute top-2 right-2">
+                                    <button class="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors">
+                                        <svg class="w-4 h-4 text-text-secondary hover:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="absolute bottom-2 left-2">
+                                    <span class="px-2 py-1 bg-success text-white rounded text-xs font-medium">91%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">Ocean Deep Explorer</h3>
+                                <div class="flex items-center text-sm text-accent">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    4.7
+                                </div>
+                            </div>
+                            <p class="text-text-secondary mb-3 text-sm">Exploração submarina com descobertas fascinantes e atmosfera imersiva.</p>
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="px-2 py-1 bg-primary-50 text-primary rounded text-xs">Atmosférico</span>
+                                <span class="px-2 py-1 bg-secondary-50 text-secondary rounded text-xs">Exploração</span>
+                                <span class="px-2 py-1 bg-accent-50 text-accent rounded text-xs">Simulação</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-primary font-bold text-lg">R$ 31,90</span>
+                                <div class="flex space-x-2">
+                                    <button class="p-2 text-text-secondary hover:text-primary transition-colors" title="Comparar">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="bg-primary hover:bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                        Ver Detalhes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Game Card 5 -->
+                        <div class="card hover:shadow-floating transition-all group cursor-pointer">
+                            <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
+                                <img src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dreamscape Chronicles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2017/11/24/10/43/ticket-2974645_1280.jpg'; this.onerror=null;" />
+                                <div class="absolute top-2 right-2">
+                                    <button class="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors">
+                                        <svg class="w-4 h-4 text-text-secondary hover:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="absolute bottom-2 left-2">
+                                    <span class="px-2 py-1 bg-success text-white rounded text-xs font-medium">94%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">Dreamscape Chronicles</h3>
+                                <div class="flex items-center text-sm text-accent">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    4.9
+                                </div>
+                            </div>
+                            <p class="text-text-secondary mb-3 text-sm">Aventura surreal através de mundos oníricos com narrativa profunda.</p>
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="px-2 py-1 bg-primary-50 text-primary rounded text-xs">História Rica</span>
+                                <span class="px-2 py-1 bg-secondary-50 text-secondary rounded text-xs">Aventura</span>
+                                <span class="px-2 py-1 bg-accent-50 text-accent rounded text-xs">Surreal</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-primary font-bold text-lg">R$ 27,90</span>
+                                <div class="flex space-x-2">
+                                    <button class="p-2 text-text-secondary hover:text-primary transition-colors" title="Comparar">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="bg-primary hover:bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                        Ver Detalhes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Game Card 6 -->
+                        <div class="card hover:shadow-floating transition-all group cursor-pointer">
+                            <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
+                                <img src="https://images.pixabay.com/photo/2017/05/10/19/29/robot-2301646_1280.jpg" alt="Mech Strategy Wars" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e'; this.onerror=null;" />
+                                <div class="absolute top-2 right-2">
+                                    <button class="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors">
+                                        <svg class="w-4 h-4 text-text-secondary hover:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="absolute bottom-2 left-2">
+                                    <span class="px-2 py-1 bg-success text-white rounded text-xs font-medium">87%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="text-lg font-semibold group-hover:text-primary transition-colors">Mech Strategy Wars</h3>
+                                <div class="flex items-center text-sm text-accent">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    4.3
+                                </div>
+                            </div>
+                            <p class="text-text-secondary mb-3 text-sm">Estratégia tática com mechs customizáveis e batalhas épicas.</p>
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="px-2 py-1 bg-primary-50 text-primary rounded text-xs">Épico</span>
+                                <span class="px-2 py-1 bg-secondary-50 text-secondary rounded text-xs">Estratégia</span>
+                                <span class="px-2 py-1 bg-accent-50 text-accent rounded text-xs">Sci-Fi</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-primary font-bold text-lg">R$ 39,90</span>
+                                <div class="flex space-x-2">
+                                    <button class="p-2 text-text-secondary hover:text-primary transition-colors" title="Comparar">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="bg-primary hover:bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                        Ver Detalhes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recently Viewed -->
+                    <div class="mt-12 p-6 bg-gray-50 rounded-xl">
+                        <h3 class="text-lg font-semibold mb-4 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Visualizados Recentemente
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4">
+                            <div class="group cursor-pointer">
+                                <div class="aspect-square rounded-lg overflow-hidden mb-2">
+                                    <img src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Quantum Shift" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg'; this.onerror=null;" />
+                                </div>
+                                <h4 class="text-sm font-medium group-hover:text-primary transition-colors">Quantum Shift</h4>
+                                <p class="text-xs text-text-secondary">R$ 22,90</p>
+                            </div>
+                            <div class="group cursor-pointer">
+                                <div class="aspect-square rounded-lg overflow-hidden mb-2">
+                                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Space Odyssey" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616c9c0e8b3'; this.onerror=null;" />
+                                </div>
+                                <h4 class="text-sm font-medium group-hover:text-primary transition-colors">Space Odyssey</h4>
+                                <p class="text-xs text-text-secondary">R$ 29,90</p>
+                            </div>
+                            <div class="group cursor-pointer">
+                                <div class="aspect-square rounded-lg overflow-hidden mb-2">
+                                    <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Retro Runner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d'; this.onerror=null;" />
+                                </div>
+                                <h4 class="text-sm font-medium group-hover:text-primary transition-colors">Retro Runner</h4>
+                                <p class="text-xs text-text-secondary">R$ 15,90</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Load More -->
+                    <div class="text-center mt-12">
+                        <button class="btn-secondary" id="loadMore">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                            Carregar Mais Jogos
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Modal (Hidden by default) -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="comparisonModal">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-surface rounded-2xl max-w-4xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6 border-b border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-2xl font-bold">Comparar Jogos</h2>
+                        <button class="p-2 text-text-secondary hover:text-primary" id="closeComparison">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Comparison content would go here -->
+                        <div class="text-center text-text-secondary">
+                            <p>Selecione jogos para comparar suas características, preços e avaliações.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                            <circle cx="16" cy="16" r="4" fill="currentColor"/>
+                        </svg>
+                        <span class="text-xl font-bold">Lunix</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Onde jogos indie encontram seu público. Apoiando a criatividade independente desde 2022.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.222.083.343-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Navegação</h3>
+                    <ul class="space-y-2">
+                        <li><a href="homepage.html" class="text-gray-400 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="game_catalog.html" class="text-gray-400 hover:text-white transition-colors">Catálogo</a></li>
+                        <li><a href="new_releases.html" class="text-gray-400 hover:text-white transition-colors">Lançamentos</a></li>
+                        <li><a href="about_us.html" class="text-gray-400 hover:text-white transition-colors">Sobre Nós</a></li>
+                    </ul>
+                </div>
+
+                <!-- For Developers -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Desenvolvedores</h3>
+                    <ul class="space-y-2">
+                        <li><a href="developer_publishing.html" class="text-gray-400 hover:text-white transition-colors">Publicar Jogo</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Recursos</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Documentação</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Suporte</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Suporte</h3>
+                    <ul class="space-y-2">
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Central de Ajuda</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Contato</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Política de Privacidade</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Termos de Uso</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 Lunix Indie Games. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive functionality for the catalog
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smart search functionality
+            const smartSearch = document.getElementById('smartSearch');
+            const quickSuggestions = document.querySelectorAll('.flex-wrap button');
+            
+            // Handle quick suggestion clicks
+            quickSuggestions.forEach(button => {
+                button.addEventListener('click', function() {
+                    smartSearch.value = this.textContent.trim();
+                    // Simulate search
+                    console.log('Searching for:', this.textContent.trim());
+                });
+            });
+
+            // View toggle functionality
+            const gridView = document.getElementById('gridView');
+            const listView = document.getElementById('listView');
+            const gamesGrid = document.getElementById('gamesGrid');
+
+            gridView.addEventListener('click', function() {
+                gamesGrid.className = 'grid sm:grid-cols-2 lg:grid-cols-3 gap-6';
+                this.classList.add('bg-white', 'shadow-sm', 'text-primary');
+                this.classList.remove('text-text-secondary');
+                listView.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                listView.classList.add('text-text-secondary');
+            });
+
+            listView.addEventListener('click', function() {
+                gamesGrid.className = 'space-y-4';
+                this.classList.add('bg-white', 'shadow-sm', 'text-primary');
+                this.classList.remove('text-text-secondary');
+                gridView.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                gridView.classList.add('text-text-secondary');
+            });
+
+            // Filter functionality
+            const clearFilters = document.getElementById('clearFilters');
+            const activeFilters = document.getElementById('activeFilters');
+
+            clearFilters.addEventListener('click', function() {
+                // Clear all checkboxes and radio buttons
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                const radios = document.querySelectorAll('input[type="radio"]');
+                
+                checkboxes.forEach(cb => cb.checked = false);
+                radios.forEach(radio => radio.checked = false);
+                
+                // Clear active filters display
+                activeFilters.innerHTML = '';
+            });
+
+            // Mood tag functionality
+            const moodTags = document.querySelectorAll('.flex-wrap button');
+            moodTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    // Toggle active state
+                    if (this.classList.contains('bg-primary')) {
+                        this.classList.remove('bg-primary', 'text-white');
+                        this.classList.add('bg-gray-100', 'text-text-secondary');
+                    } else {
+                        this.classList.add('bg-primary', 'text-white');
+                        this.classList.remove('bg-gray-100', 'text-text-secondary');
+                    }
+                });
+            });
+
+            // Wishlist functionality
+            const wishlistButtons = document.querySelectorAll('button[title="Wishlist"], svg[fill="none"]');
+            wishlistButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    // Toggle wishlist state
+                    const svg = this.tagName === 'svg' ? this : this.querySelector('svg');
+                    if (svg) {
+                        if (svg.getAttribute('fill') === 'currentColor') {
+                            svg.setAttribute('fill', 'none');
+                            svg.classList.remove('text-accent');
+                            svg.classList.add('text-text-secondary');
+                        } else {
+                            svg.setAttribute('fill', 'currentColor');
+                            svg.classList.add('text-accent');
+                            svg.classList.remove('text-text-secondary');
+                        }
+                    }
+                });
+            });
+
+            // Comparison modal functionality
+            const comparisonModal = document.getElementById('comparisonModal');
+            const closeComparison = document.getElementById('closeComparison');
+            const compareButtons = document.querySelectorAll('button[title="Comparar"]');
+
+            compareButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    comparisonModal.classList.remove('hidden');
+                });
+            });
+
+            closeComparison.addEventListener('click', function() {
+                comparisonModal.classList.add('hidden');
+            });
+
+            // Close modal on backdrop click
+            comparisonModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.add('hidden');
+                }
+            });
+
+            // Load more functionality
+            const loadMore = document.getElementById('loadMore');
+            loadMore.addEventListener('click', function() {
+                // Simulate loading more games
+                this.innerHTML = '<svg class="w-4 h-4 mr-2 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>Carregando...';
+                
+                setTimeout(() => {
+                    this.innerHTML = '<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>Carregar Mais Jogos';
+                }, 2000);
+            });
+
+            // Game card hover effects
+            const gameCards = document.querySelectorAll('.group');
+            gameCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Progressive disclosure - show more details on hover
+            gameCards.forEach(card => {
+                const detailsButton = card.querySelector('.bg-primary');
+                card.addEventListener('mouseenter', function() {
+                    if (detailsButton) {
+                        detailsButton.style.transform = 'scale(1.05)';
+                    }
+                });
+                card.addEventListener('mouseleave', function() {
+                    if (detailsButton) {
+                        detailsButton.style.transform = 'scale(1)';
+                    }
+                });
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
