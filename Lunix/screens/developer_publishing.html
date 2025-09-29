@@ -35,28 +35,9 @@
 
                 <!-- User Actions -->
                 <div class="flex items-center space-x-4">
-                    <button class="p-2 text-text-secondary hover:text-primary transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-12"/>
-                        </svg>
-                    </button>
-                    <button class="p-2 text-text-secondary hover:text-primary transition-colors relative">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-12"/>
-                        </svg>
-                        <span class="absolute -top-1 -right-1 bg-accent text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">2</span>
-                    </button>
                     <button class="btn-primary">Dashboard</button>
                 </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button class="p-2 text-text-secondary hover:text-primary">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
+        
             </div>
         </nav>
     </header>
@@ -111,7 +92,7 @@
                     </div>
 
                     <div class="flex flex-wrap gap-4">
-                        <button class="btn-primary">Começar Agora</button>
+                        <a href="publish_game.html"><button class="btn-primary">Começar Agora</button></a>
                         <button class="px-6 py-3 border-2 border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 transition-all">
                             Ver Documentação
                         </button>
@@ -621,9 +602,11 @@
                 Junte-se a centenas de desenvolvedores que já encontraram sucesso na Lunix
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                    Começar Publicação
-                </button>
+                <a href="publish_game.html">
+                    <button class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Começar Publicação
+                    </button>
+                </a>
                 <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors">
                     Falar com Especialista
                 </button>
