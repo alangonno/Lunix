@@ -71,69 +71,12 @@
                 </p>
                 
                 <!-- Notification Settings -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <button class="bg-accent hover:bg-accent-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center transition-colors">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM9 7H4l5-5v5zm6 10V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2h6a2 2 0 002-2z"/>
-                        </svg>
-                        Ativar Notificações
-                    </button>
-                    <div class="text-primary-200 text-sm">
-                        Receba alertas sobre novos lançamentos e acesso antecipado
-                    </div>
-                </div>
+
+               
             </div>
         </div>
     </section>
 
-    <!-- Filter Controls -->
-    <section class="bg-surface py-8 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row gap-6 items-center justify-between">
-                <!-- Release Type Filters -->
-                <div class="flex flex-wrap gap-3">
-                    <button class="bg-primary text-white px-4 py-2 rounded-lg font-semibold text-sm transition-colors">
-                        Todos
-                    </button>
-                    <button class="bg-gray-100 text-text-secondary hover:bg-primary hover:text-white px-4 py-2 rounded-lg font-semibold text-sm transition-colors">
-                        Lançamento Completo
-                    </button>
-                    <button class="bg-gray-100 text-text-secondary hover:bg-primary hover:text-white px-4 py-2 rounded-lg font-semibold text-sm transition-colors">
-                        Acesso Antecipado
-                    </button>
-                    <button class="bg-gray-100 text-text-secondary hover:bg-primary hover:text-white px-4 py-2 rounded-lg font-semibold text-sm transition-colors">
-                        Beta Aberto
-                    </button>
-                    <button class="bg-gray-100 text-text-secondary hover:bg-primary hover:text-white px-4 py-2 rounded-lg font-semibold text-sm transition-colors">
-                        Pré-venda
-                    </button>
-                </div>
-
-                <!-- View Toggle & Sort -->
-                <div class="flex items-center gap-4">
-                    <div class="flex bg-gray-100 rounded-lg p-1">
-                        <button class="bg-white shadow-soft px-3 py-2 rounded text-sm font-medium text-primary">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </button>
-                        <button class="px-3 py-2 rounded text-sm font-medium text-text-secondary hover:text-primary">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
-                            </svg>
-                        </button>
-                    </div>
-                    
-                    <select class="input-field text-sm w-48">
-                        <option>Data de Lançamento</option>
-                        <option>Mais Aguardados</option>
-                        <option>Alfabética</option>
-                        <option>Preço</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Featured Release -->
     <section class="py-16">
@@ -149,7 +92,7 @@
                                 Acesso Antecipado
                             </span>
                         </div>
-                        <h2 class="text-3xl font-bold mb-4">Stellar Odyssey</h2>
+                        <h2 class="text-3xl font-bold mb-4">No Man's Sky</h2>
                         <p class="text-secondary-100 mb-6 text-lg">
                             Uma épica jornada espacial que combina exploração, construção de bases e narrativa procedural. Criado por uma equipe de apenas 3 desenvolvedores ao longo de 4 anos.
                         </p>
@@ -175,23 +118,21 @@
                         </div>
                     </div>
 
-                    <div class="relative">
-                        <div class="aspect-video">
-                            <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Stellar Odyssey Gameplay" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2017/05/10/19/29/robot-2301646_1280.jpg'; this.onerror=null;" />
+                   <!--video e banner do video-->
+                                            <video 
+                                            src="../video/Trailer.mp4" 
+                                            poster="../image/no man.webp" 
+                                            alt="No Man's Sky" 
+                                            class="w-full h-full object-cover rounded-lg" 
+                                            loading="lazy" 
+                                            controls
+                                            ></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- Play Button Overlay -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <button class="bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full p-4 transition-colors">
-                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </section>
 
     <!-- Release Calendar -->
     <section class="py-16 bg-gray-50">
@@ -249,7 +190,7 @@
                         <span class="font-semibold">12</span>
                         <div class="absolute bottom-1 left-1 right-1">
                             <div class="bg-accent text-white text-xs px-1 py-0.5 rounded truncate">
-                                Pixel Quest
+                               A Short Hike
                             </div>
                         </div>
                     </div>
@@ -276,7 +217,7 @@
                         <span class="font-semibold">25</span>
                         <div class="absolute bottom-1 left-1 right-1">
                             <div class="bg-secondary text-white text-xs px-1 py-0.5 rounded truncate">
-                                Stellar Odyssey
+                                No Man's Sky
                             </div>
                         </div>
                     </div>
@@ -288,7 +229,7 @@
                         <span class="font-semibold">28</span>
                         <div class="absolute bottom-1 left-1 right-1">
                             <div class="bg-success text-white text-xs px-1 py-0.5 rounded truncate">
-                                Beta: Neon City
+                                Beta: Neon White
                             </div>
                         </div>
                     </div>
@@ -333,7 +274,7 @@
                 <div class="card hover:shadow-floating transition-all group">
                     <div class="grid md:grid-cols-4 gap-6 items-center">
                         <div class="aspect-video rounded-lg overflow-hidden">
-                            <img src="https://images.pixabay.com/photo/2017/11/24/10/43/ticket-2974645_1280.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Pixel Quest" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                            <img src="../image/a sort hike.jpg" alt="A Sort Hike" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />                        
                         </div>
 
                         <div class="md:col-span-2">
@@ -345,9 +286,9 @@
                                     Lançamento Completo
                                 </span>
                             </div>
-                            <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Pixel Quest</h3>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">A Short Hike</h3>
                             <p class="text-text-secondary mb-4">
-                                Uma aventura retrô que combina elementos de RPG clássico com mecânicas modernas de crafting e exploração.
+                                Uma aventura que combina elementos de RPG clássico com mecânicas modernas de exploração.
                             </p>
                             
                             <!-- Developer Info -->
@@ -384,7 +325,7 @@
                 <div class="card hover:shadow-floating transition-all group">
                     <div class="grid md:grid-cols-4 gap-6 items-center">
                         <div class="aspect-video rounded-lg overflow-hidden">
-                            <img src="https://images.pexels.com/photos/194511/pexels-photo-194511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Neon City Beta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2016/11/29/06/18/home-office-1867761_1280.jpg'; this.onerror=null;" />
+                            <img src="../image/neonwhite.avif" alt="Neon White" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />                        
                         </div>
 
                         <div class="md:col-span-2">
@@ -396,9 +337,9 @@
                                     Beta Aberto
                                 </span>
                             </div>
-                            <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Neon City</h3>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Neon White</h3>
                             <p class="text-text-secondary mb-4">
-                                Cyberpunk atmosférico com foco em narrativa ramificada e escolhas que impactam o mundo ao seu redor.
+                                Cyberpunk atmosférico com foco em parkour ramificada e escolhas que impactam o mundo ao seu redor.
                             </p>
                             
                             <!-- Developer Info -->
@@ -411,7 +352,7 @@
                             </div>
 
                             <div class="flex items-center gap-4 text-sm text-text-secondary">
-                                <span>🎮 Cyberpunk, Narrativa</span>
+                                <span>🎮 Cyberpunk, Parkour</span>
                                 <span>⏱️ Beta limitado</span>
                                 <span>👥 500 vagas</span>
                             </div>
@@ -448,7 +389,7 @@
                 <!-- Interview 1 -->
                 <div class="bg-surface rounded-2xl overflow-hidden shadow-soft">
                     <div class="aspect-video relative">
-                        <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Developer Interview" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg'; this.onerror=null;" />
+                        <img src="../image/no man.webp" alt="Developer Interview" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg'; this.onerror=null;" />
                         <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
                             <button class="bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full p-4 transition-colors">
                                 <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -461,14 +402,14 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">A Jornada de Stellar Odyssey</h3>
+                        <h3 class="text-xl font-bold mb-2">A Jornada de No Man's Sky</h3>
                         <p class="text-text-secondary mb-4">
-                            Ana Costa compartilha os desafios e descobertas durante 4 anos de desenvolvimento
+                            Gustavo compartilha os desafios e descobertas durante 4 anos de desenvolvimento
                         </p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ana Costa" class="w-8 h-8 rounded-full mr-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616c9c0e8b3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
-                                <span class="text-sm font-medium">Ana Costa</span>
+                                <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Gustavo" class="w-8 h-8 rounded-full mr-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616c9c0e8b3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                                <span class="text-sm font-medium">Gustavo</span>
                             </div>
                             <span class="text-sm text-text-secondary">há 2 dias</span>
                         </div>
@@ -483,7 +424,7 @@
                         </svg>
                         <span class="font-semibold">Próximo AMA</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Sessão AMA: Pixel Quest</h3>
+                    <h3 class="text-2xl font-bold mb-4">Sessão AMA: A Short Hike</h3>
                     <p class="text-primary-100 mb-6">
                         João Santos responderá suas perguntas sobre desenvolvimento indie, inspirações e o futuro dos jogos retrô
                     </p>
@@ -522,16 +463,16 @@
                 <!-- Early Access Game 1 -->
                 <div class="card hover:shadow-floating transition-all group cursor-pointer">
                     <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
-                        <img src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Quantum Realms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg'; this.onerror=null;" />
+                            <img src="../image/balatro.webp" alt="Balatro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />                        
                         <div class="absolute top-3 left-3">
                             <span class="bg-secondary text-white px-2 py-1 rounded text-xs font-semibold">
                                 Acesso Antecipado
                             </span>
                         </div>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Quantum Realms</h3>
+                    <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Balatro</h3>
                     <p class="text-text-secondary text-sm mb-4">
-                        Puzzle sci-fi com mecânicas de manipulação temporal. 70% completo.
+                       O pôquer roguelike. Balatro é um jogo de criação de baralho hipnoticamente satisfatório em que você joga mãos de pôquer ilegais.
                     </p>
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-primary font-bold">R$ 34,90</span>
@@ -550,14 +491,14 @@
                 <!-- Early Access Game 2 -->
                 <div class="card hover:shadow-floating transition-all group cursor-pointer">
                     <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
-                        <img src="https://images.pixabay.com/photo/2017/05/10/19/29/robot-2301646_1280.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Mystic Gardens" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e'; this.onerror=null;" />
+                            <img src="../image/Garden Story.png" alt="Garden Story" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />                        
                         <div class="absolute top-3 left-3">
                             <span class="bg-secondary text-white px-2 py-1 rounded text-xs font-semibold">
                                 Acesso Antecipado
                             </span>
                         </div>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Mystic Gardens</h3>
+                    <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Garden Story</h3>
                     <p class="text-text-secondary text-sm mb-4">
                         Simulador de jardinagem com elementos mágicos. 85% completo.
                     </p>
@@ -578,7 +519,7 @@
                 <!-- Early Access Game 3 -->
                 <div class="card hover:shadow-floating transition-all group cursor-pointer">
                     <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
-                        <img src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Shadow Protocol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2017/11/24/10/43/ticket-2974645_1280.jpg'; this.onerror=null;" />
+                            <img src="../image/shadow.jpg" alt="Shadow Protocol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />                        
                         <div class="absolute top-3 left-3">
                             <span class="bg-secondary text-white px-2 py-1 rounded text-xs font-semibold">
                                 Acesso Antecipado
